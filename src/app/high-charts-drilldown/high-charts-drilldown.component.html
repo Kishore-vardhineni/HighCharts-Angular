@@ -1,0 +1,13 @@
+<h2 *ngIf="firstChartHide">Angular Charts2</h2>
+
+<div *ngIf="backSecondDrillDown">
+  <button type="button" (click)="backToSecondDrillDown()">Back</button>
+</div>
+
+<div *ngIf="firstChartHide">
+    <highcharts-chart
+    [Highcharts]="Highcharts"
+    [options]="chartOptions"
+    (click)="secondChartInfo()"
+  ></highcharts-chart>
+</div>

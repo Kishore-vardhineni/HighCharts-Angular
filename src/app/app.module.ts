@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { HighChartsDrilldownComponent } from './high-charts-drilldown/high-charts-drilldown.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HighChartsDrilldownComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HighchartsChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
