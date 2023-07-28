@@ -83,13 +83,15 @@ export class AppComponent {
         }
       },
       series: this.chatservice.getChartData2(),
-      //series: this.chatservice.getChartOneDrillDown()
     }
   }
 
   firstChartInfo = () => {
      this.firstChartHide = ! this.firstChartHide;
      this.backDrillDown = true;
+    //  this.chartOptions = {
+    //    series: this.chatservice.getChartData2()
+    //  }
   }
 
   // onchange(value: any){
@@ -103,6 +105,9 @@ export class AppComponent {
   backToDrillDown() {
     this.backDrillDown = false;
     this.firstChartHide = true;
+    this.chartOptions = {
+      series: this.chatservice.getChartData1(),
+    }
   }
   
 }
