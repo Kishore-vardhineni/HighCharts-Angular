@@ -164,12 +164,12 @@ export class HighchartService {
         {
           name: '3-10 days',
           y: 1.6,
-          drilldown: 'Safari'
+          drilldown: '3-10 days'
         },
         {
           name: '>10 days',
           y: 13.6,
-          drilldown: 'Edge'
+          drilldown: '>10 days'
         },
       ]
     }
@@ -179,7 +179,7 @@ export class HighchartService {
     {
       name: '0-3 days',
       id: '0-3 days',
-      data: 
+      data:
         `<table>
   <thead>
       <tr>
@@ -214,64 +214,73 @@ export class HighchartService {
     {
       name: '3-10 days',
       id: '3-10 days',
-      // data: [
-      //   [
-      //     'v15.3',
-      //     0.1
-      //   ],
-      //   [
-      //     'v15.2',
-      //     2.01
-      //   ],
-      //   [
-      //     'v15.1',
-      //     2.29
-      //   ],
-      //   [
-      //     'v15.0',
-      //     0.49
-      //   ],
-      //   [
-      //     'v14.1',
-      //     2.48
-      //   ],
-      //   [
-      //     'v14.0',
-      //     0.64
-      //   ],
-      //   [
-      //     'v13.1',
-      //     1.17
-      //   ],
-      //   [
-      //     'v13.0',
-      //     0.13
-      //   ],
-      //   [
-      //     'v12.1',
-      //     0.16
-      //   ]
-      // ]
-      data: []
+      data: [
+        `<table id="datatable">
+        <thead>
+            <tr>
+                <th>3-10 Days</th>
+                <th>Year</th>
+                <th>Quater1</th>
+                <th>Sales</th>
+                <th>Quater2</th>
+                <th>Sales</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>7</td>
+                <td>2022</td>
+                <td>March-Sept</td>
+                <td>20%</td>
+                <td>Sep-March</td>
+                <td>30%</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>2021</td>
+                <td>March-Sept</td>
+                <td>45.0%</td>
+                <td>Sep-March</td>
+                <td>90%</td>
+            </tr>
+        </tbody>
+    </table>`
+      ]
     },
     {
-      name: 'Edge',
-      id: 'Edge',
-      // data: [
-      //   [
-      //     'v97',
-      //     6.62
-      //   ],
-      //   [
-      //     'v96',
-      //     2.55
-      //   ],
-      //   [
-      //     'v95',
-      //     0.15
-      //   ]
-      // ]
-      data: []
+      name: '>10 days',
+      id: '>10 days',
+
+      data: `<table id="datatable">
+      <thead>
+          <tr>
+              <th>>10 Days</th>
+              <th>Year</th>
+              <th>Quater1</th>
+              <th>Sales</th>
+              <th>Quater2</th>
+              <th>Sales</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>13</td>
+              <td>2022</td>
+              <td>March-Sept</td>
+              <td>54%</td>
+              <td>Sep-March</td>
+              <td>38.6%</td>
+          </tr>
+          <tr>
+              <td>12</td>
+              <td>2021</td>
+              <td>March-Sept</td>
+              <td>77.0%</td>
+              <td>Sep-March</td>
+              <td>90.0%</td>
+          </tr>
+      </tbody>
+  </table>`
     },
   ]
 

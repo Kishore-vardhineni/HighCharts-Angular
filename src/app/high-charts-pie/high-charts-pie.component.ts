@@ -9,11 +9,12 @@ import { HighchartService } from '../highchart.service';
 })
 export class HighChartsPieComponent {
   @ViewChild('chartContainer') chartContainer!: ElementRef;
-  tableData1: boolean = false;
-  tableData2: boolean = false;
-  tableData3: boolean = false;
+  @ViewChild("container", { read: ElementRef })
+  container!: ElementRef;
+  @ViewChild("datatable", { read: ElementRef }) datatable!: ElementRef;
+  private myVariable!: Highcharts.Chart;
+  hideTableChartData: boolean = false;
 
-  chatData: any;
 
   constructor(private chatService: HighchartService,) {}
 
@@ -21,8 +22,8 @@ export class HighChartsPieComponent {
   Highcharts: typeof Highcharts = Highcharts;
 
   ngOnInIt() {
-  
-  }
+ }
+
 
   chartOptions: Highcharts.Options = ({
     data: {
@@ -36,21 +37,22 @@ export class HighChartsPieComponent {
       width: 500,
       height: 300,
       events: {
-        drilldown: function (e) {
-            e.target.options.drilldown?.series?.filter((x: any) => {
-               console.log(x);
-               if(x.name == '0-3 days') {
-                  
-               } else if(x.name == '3-10 days') {
-                 
-               } else {
-
+        drilldown: function (e: Highcharts.DrilldownEventObject) {
+            e.target.options.drilldown?.series?.forEach((x: any) => {
+               if(x.name === e.seriesOptions?.name) {
+                  console.log("filtered data", x.data, x.name)
+               } else if(x.name === e.seriesOptions?.name) {
+                 console.log("filtered 2", x.data, x.name)
+               } else if(x.name === e.seriesOptions?.name){
+                 console.log("filtered 3", x.data, x.name)
                }
             })
         },
-        drillup: function (e) {
+        drillup: function () {
           // Handle drillup event
+          // console.log(e);
         },
+        //series: this.chatService.getPieSecondChartData(),
       },
     },
     title: {
@@ -95,4 +97,10 @@ export class HighChartsPieComponent {
   pieChartCondition(value: any) {
      console.log(value)
   }
+
+  loadTableOne(value: any) {
+    console.log(value);
+  }
+
+  
 }
